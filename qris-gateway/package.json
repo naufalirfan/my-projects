@@ -1,0 +1,26 @@
+{
+  "name": "qris-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --parallel dev",
+    "dev:api": "pnpm --filter @qris/api dev",
+    "dev:web": "pnpm --filter @qris/web dev",
+    "dev:sqlite": "node scripts/dev-sqlite.js",
+    "build": "pnpm --parallel build",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "db:dev:push": "PRISMA_SCHEMA_PATH=prisma/schema.sqlite.prisma DATABASE_URL=\"file:./dev.db\" prisma db push",
+    "db:dev:generate": "PRISMA_SCHEMA_PATH=prisma/schema.sqlite.prisma DATABASE_URL=\"file:./dev.db\" prisma generate",
+    "dev:sqlite": "cross-env DATABASE_URL=\"file:./prisma/dev.db\" NODE_ENV=development pnpm --parallel dev",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "devDependencies": {
+    "@prisma/client": "^5.22.0",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "prisma": "^5.22.0"
+  }
+}

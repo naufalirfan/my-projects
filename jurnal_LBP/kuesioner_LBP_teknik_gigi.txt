@@ -1,0 +1,165 @@
+================================================================
+KUISIONER PENELITIAN
+Low Back Pain (Nyeri Punggung Bawah) pada Mahasiswa Teknik Gigi
+================================================================
+
+Petunjuk pengisian:
+- Pilihlah jawaban yang paling sesuai dengan kondisi Anda.
+- Tidak ada jawaban yang benar atau salah. Isilah dengan jujur.
+- Kuesioner ini terdiri dari 4 bagian: A (identitas & kebiasaan kerja),
+  B (prevalensi & lokasi nyeri), C (intensitas nyeri), D (disabilitas ODI).
+
+----------------------------------------------------------------
+BAGIAN A. IDENTITAS & KEBIASAAN KERJA (Ergonomi)
+----------------------------------------------------------------
+A1. Jenis kelamin          : [ ] Laki-laki   [ ] Perempuan
+A2. Usia                   : ______ tahun
+A3. Semester / angkatan    : ______
+A4. Rata-rata jam praktik di lab teknik gigi per hari : ______ jam
+A5. Berapa kali istirahat (minimal 5 menit) saat praktik? : ______ kali/hari
+A6. Saat praktik, postur tubuh Anda paling sering:
+    [ ] Duduk tegak (punggung lurus)
+    [ ] Duduk membungkuk ke depan (fleksi)
+    [ ] Berdiri
+    [ ] Campur (duduk & berdiri)
+A7. Seringkah Anda merasa lelah/pegang otot setelah praktik?
+    [ ] Tidak pernah  [ ] Jarang  [ ] Kadang  [ ] Sering  [ ] Selalu
+A8. Tingkat kelelahan subjektif setelah praktik (centang 0-10):
+    0(tidak lelah) 1 2 3 4 5 6 7 8 9 10(sangat lelah) : ___
+A9. Menggunakan alat bantu ergonomi? (bisa lebih dari satu)
+    [ ] Tidak ada  [ ] Kursi ergonomis/saddle  [ ] Lup (loupes)
+    [ ] Meja tinggi adjustable  [ ] Lainnya: ______
+
+----------------------------------------------------------------
+BAGIAN B. PREVALENSI & LOKASI NYERI (Nordic Musculoskeletal Questionnaire)
+----------------------------------------------------------------
+B1. Dalam 12 BULAN terakhir, apakah Anda mengalami nyeri/nyeri pegal
+    pada punggung bawah (pinggang)?
+    [ ] Ya   [ ] Tidak
+B2. Dalam 7 HARI terakhir, apakah Anda mengalami nyeri punggung bawah?
+    [ ] Ya   [ ] Tidak
+B3. Apakah nyeri punggung bawah tersebut membatasi aktivitas Anda?
+    [ ] Ya   [ ] Tidak
+B4. Centang gambar tubuh di mana Anda merasa nyeri (boleh lebih dari satu):
+    [ ] Leher   [ ] Bahu kanan   [ ] Bahu kiri
+    [ ] Punggung atas   [ ] PUNGGUNG BAWAH (pinggang)
+    [ ] Siku   [ ] Pergelangan tangan/tangan   [ ] Pinggul/paha
+    [ ] Lutut   [ ] Pergelangan kaki
+
+----------------------------------------------------------------
+BAGIAN C. INTENSITAS NYERI (Numeric Rating Scale / NRS)
+----------------------------------------------------------------
+C1. Seberapa hebat nyeri punggung bawah Anda SAAT INI?
+    0(tidak nyeri) 1 2 3 4 5 6 7 8 9 10(terparah) : ___
+C2. Rata-rata nyeri punggung bawah dalam 1 MINGGU terakhir?
+    0 1 2 3 4 5 6 7 8 9 10 : ___
+
+----------------------------------------------------------------
+BAGIAN D. TINGKAT DISABILITAS (Oswestry Disability Index / ODI)
+----------------------------------------------------------------
+Petunjuk: Pilih SATU pernyataan yang paling menggambarkan kondisi Anda
+saat ini. Beri tanda centang (√).
+
+D1. Intensitas nyeri
+ [ ] Saya tidak nyeri sama sekali
+ [ ] Nyeri sangat ringan saat ini
+ [ ] Nyeri sedang saat ini
+ [ ] Nyeri cukup berat saat ini
+ [ ] Nyeri sangat berat saat ini
+ [ ] Nyeri tak tertahankan saat ini
+
+D2. Perawatan diri (mandi, berpakaian)
+ [ ] Dapat merawat diri tanpa nyeri tambahan
+ [ ] Dapat merawat diri tapi menimbulkan nyeri tambahan
+ [ ] Nyeri membuat perawatan diri lambat & hati-hati
+ [ ] Butuh bantuan sebagian, tapi masih bisa sebagian besar
+ [ ] Butuh bantuan setiap hari untuk sebagian besar perawatan
+ [ ] Tidak berpakaian, susah mandi, di tempat tidur saja
+
+D3. Mengangkat beban
+ [ ] Dapat angkat beban berat tanpa nyeri tambahan
+ [ ] Dapat angkat beban berat tapi nyeri tambahan
+ [ ] Nyeri cegah angkat beban berat dari lantai, tapi bisa bila di tempat nyaman (meja)
+ [ ] Nyeri cegah angkat beban berat, tapi bisa ringan-sedang bila tempat nyaman
+ [ ] Hanya bisa angkat beban sangat ringan
+ [ ] Tidak bisa angkat/membawa apa pun
+
+D4. Berjalan
+ [ ] Nyeri tak menghalangi jalan jarak berapa pun
+ [ ] Nyeri cegah jalan > 1 km
+ [ ] Nyeri cegah jalan > 500 m
+ [ ] Nyeri cegah jalan > 100 m
+ [ ] Nyeri cegah jalan hanya di dalam rumah
+ [ ] Tidak bisa berjalan sama sekali
+
+D5. Duduk
+ [ ] Dapat duduk sesuka hati tanpa nyeri
+ [ ] Dapat duduk sesuka hati tapi nyeri timbul
+ [ ] Nyeri cegah duduk > 1 jam
+ [ ] Nyeri cegah duduk > 30 menit
+ [ ] Nyeri cegah duduk > 10 menit
+ [ ] Tidak bisa duduk sama sekali
+
+D6. Berdiri
+ [ ] Dapat berdiri sesuka hati tanpa nyeri
+ [ ] Dapat berdiri sesuka hati tapi nyeri timbul
+ [ ] Nyeri cegah berdiri > 1 jam
+ [ ] Nyeri cegah berdiri > 30 menit
+ [ ] Nyeri cegah berdiri > 10 menit
+ [ ] Tidak bisa berdiri sama sekali
+
+D7. Tidur
+ [ ] Tidur nyenyak tanpa gangguan nyeri
+ [ ] Tidur agak terganggu tapi masih wajar
+ [ ] Karena nyeri, hanya bisa tidur maks 6 jam
+ [ ] Karena nyeri, hanya bisa tidur maks 4 jam
+ [ ] Karena nyeri, hanya bisa tidur maks 2 jam
+ [ ] Nyeri membuat tidak bisa tidur sama sekali
+
+D8. Kehidupan sosial
+ [ ] Kehidupan sosial normal tanpa gangguan nyeri
+ [ ] Kehidupan sosial normal tapi nyeri mengganggu
+ [ ] Nyeri mengurangi kehidupan sosial, jarang keluar
+ [ ] Nyeri membatasi, tidak bisa berkunjung ke teman
+ [ ] Nyeri membuat hubungan sosial minim, di rumah saja
+ [ ] Tidak ada kehidupan sosial akibat nyeri
+
+D9. Aktivitas sehari-hari (pekerjaan/kuliah/rumah tangga)
+ [ ] Dapat melakukan semua aktivitas tanpa nyeri
+ [ ] Dapat melakukan semua tapi nyeri lebih cepat lelah
+ [ ] Nyeri mengubah cara & mengurangi aktivitas
+ [ ] Nyeri membatasi hanya bisa aktivitas khusus
+ [ ] Nyeri membuat hampir semua aktivitas tidak bisa
+ [ ] Tidak bisa melakukan aktivitas apa pun
+
+D10. Berkendara / bepergian
+ [ ] Dapat berkendara/bepergian tanpa nyeri
+ [ ] Dapat berkendara/bepergian tapi nyeri timbul
+ [ ] Nyeri cegah berkendara/bepergian > 1 jam
+ [ ] Nyeri cegah berkendara/bepergian > 30 menit
+ [ ] Nyeri cegah berkendara/bepergian > 10 menit
+ [ ] Tidak bisa berkendara/bepergian sama sekali
+
+----------------------------------------------------------------
+CARA SKORING ODI
+----------------------------------------------------------------
+- Setiap jawaban diberi nilai 0 (pilihan pertama) s.d. 5 (pilihan terakhir).
+- Total skor = jumlah nilai D1 s.d. D10 (maks 50).
+- Jika ada bagian yang tidak dijawab:
+    % disabilitas = (total skor diperoleh / (5 x jumlah bagian dijawab)) x 100
+- Kategori:
+    0-20%   : Disabilitas minimal
+    21-40%  : Disabilitas sedang
+    41-60%  : Disabilitas berat
+    61-80%  : Crippled (sangat terganggu)
+    81-100% : Bed-bound / melebih-lebihkan gejala
+
+----------------------------------------------------------------
+REFERENSI INSTRUMEN
+----------------------------------------------------------------
+- NRS/VAS: Chiarotto et al., J Pain 2019 (PMID: 30099210)
+- Nordic Musculoskeletal Questionnaire: Kuorinka et al., 1987
+- Oswestry Disability Index v2.1a: Fairbank & Pynsent, Spine 2000
+- Penerapan pada tenaga lab/teknik: Al-Hourani et al. (Work 2017);
+  MDPI Healthcare 2025, 13(12):1406
+================================================================

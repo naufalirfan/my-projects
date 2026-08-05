@@ -1,0 +1,137 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Merchant {
+  id            String   @id @default(uuid())
+  name          String
+  email         String   @unique
+  phone         String?
+  passwordHash  String
+  apiKey        String   @unique @default(uuid())
+  secretKey     String   @default(cuid())
+  status        String   @default("ACTIVE")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  transactions  Transaction[]
+  settlements   Settlement[]
+  webhooks      Webhook[]
+  bankAccounts  BankAccount[]
+
+  @@map("merchants")
+}
+
+model BankAccount {
+  id            String   @id @default(uuid())
+  merchantId    String
+  bankCode      String
+  bankName      String
+  accountNumber String
+  accountName   String
+  isDefault     Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  merchant      Merchant  @relation(fields: [merchantId], references: [id])
+  settlements   Settlement[]
+
+  @@map("bank_accounts")
+}
+
+model Transaction {
+  id              String    @id @default(uuid())
+  merchantId      String
+  externalId      String    @unique
+  amount          Float
+  currency        String    @default("IDR")
+  status          String    @default("PENDING")
+  description     String?
+  customerName    String?
+  customerEmail   String?
+  customerPhone   String?
+  qrisData        String?
+  qrCodeUrl       String?
+  qrisInvoiceId   String?
+  qrisNmid        String?
+  qrisRequestDate DateTime?
+  paymentMethod   String?
+  paymentReference String?
+  paidAt          DateTime?
+  expiresAt       DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  merchant        Merchant  @relation(fields: [merchantId], references: [id])
+  webhookLogs     WebhookLog[]
+
+  @@index([merchantId])
+  @@index([externalId])
+  @@index([status])
+  @@map("transactions")
+}
+
+model Webhook {
+  id          String   @id @default(uuid())
+  merchantId  String
+  url         String
+  secret      String   @default(cuid())
+  events      String   @default("payment.success,payment.failed")
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  merchant    Merchant  @relation(fields: [merchantId], references: [id])
+  webhookLogs WebhookLog[]
+
+  @@map("webhooks")
+}
+
+model WebhookLog {
+  id          String   @id @default(uuid())
+  webhookId   String
+  transactionId String
+  url         String
+  payload     String
+  response    String?
+  statusCode  Int?
+  success     Boolean  @default(false)
+  attempts    Int      @default(0)
+  lastAttempt DateTime?
+  createdAt   DateTime @default(now())
+
+  webhook     Webhook      @relation(fields: [webhookId], references: [id])
+  transaction Transaction @relation(fields: [transactionId], references: [id])
+
+  @@index([webhookId])
+  @@index([transactionId])
+  @@map("webhook_logs")
+}
+
+model Settlement {
+  id              String   @id @default(uuid())
+  merchantId      String
+  bankAccountId   String
+  amount          Float
+  fee             Float    @default(0)
+  netAmount       Float
+  status          String   @default("PENDING")
+  reference       String   @unique @default(uuid())
+  period          String
+  description     String?
+  processedAt     DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  merchant        Merchant    @relation(fields: [merchantId], references: [id])
+  bankAccount     BankAccount @relation(fields: [bankAccountId], references: [id])
+
+  @@index([merchantId])
+  @@index([status])
+  @@map("settlements")
+}

@@ -1,0 +1,83 @@
+﻿server:
+  host: "127.0.0.1"
+  port: 20128
+  dashboard: true
+  log_level: "info"
+
+routing:
+  strategy: fallback
+  combos:
+    auto:
+      description: "Smart auto-select based on scoring"
+    cheap:
+      description: "Optimized for lowest cost"
+    fast:
+      description: "Optimized for low latency"
+
+providers:
+  groq:
+    enabled: true
+    tier: 3
+    api_key: "YOUR_GROQ_API_KEY"
+    base_url: "https://api.groq.com/openai/v1"
+    models:
+      - "llama-3.3-70b-versatile"
+      - "llama-3.1-8b-instant"
+      - "mixtral-8x7b-32768"
+      - "gemma2-9b-it"
+    api_keys: []
+
+  openrouter:
+    enabled: true
+    tier: 3
+    api_key: "YOUR_OPENROUTER_API_KEY"
+    base_url: "https://openrouter.ai/api/v1"
+    models:
+      - "openai/gpt-4o-mini"
+      - "anthropic/claude-3-haiku"
+      - "google/gemini-2.0-flash-001"
+      - "meta-llama/llama-3.3-70b-instruct"
+      - "mistralai/mistral-7b-instruct"
+      - "qwen/qwen-2.5-72b-instruct"
+    api_keys: []
+
+  gemini:
+    enabled: true
+    tier: 3
+    api_key: "test-gemini-key"
+    base_url: "https://generativelanguage.googleapis.com/v1beta"
+    models:
+      - "gemini-2.0-flash"
+      - "gemini-1.5-flash"
+      - "gemini-1.5-pro"
+    api_keys: []
+
+  kiro:
+    enabled: false
+    tier: 3
+    api_key: ""
+    base_url: "https://api.kiro.ai/v1"
+    models:
+      - "claude-sonnet-4.5"
+      - "glm-5"
+
+  openai:
+    enabled: false
+    tier: 1
+    api_key: ""
+    base_url: "https://api.openai.com/v1"
+
+  anthropic:
+    enabled: false
+    tier: 1
+    api_key: ""
+    base_url: "https://api.anthropic.com"
+
+token_saver:
+  enabled: true
+  mode: "standard"
+  max_tool_output_lines: 500
+  max_tool_output_chars: 10000
+  strip_repeated_blank_lines: true
+
+proxy:

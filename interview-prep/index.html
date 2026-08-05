@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Prep</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Interview Prep</h1>
+    <p>Latihan interview tech &mdash; Coding, System Design, Behavioral</p>
+    <button id="darkToggle" title="Ganti tema">🌙</button>
+  </header>
+
+  <main>
+    <!-- HOME SCREEN -->
+    <section id="homeScreen">
+      <div class="home-grid">
+        <div class="home-card" onclick="startQuiz('Coding')">
+          <div class="home-icon">💻</div>
+          <h3>Coding</h3>
+          <p>Data structures, algorithms, JavaScript, Big O</p>
+          <span class="tag-count" id="countCoding">0 soal</span>
+        </div>
+        <div class="home-card" onclick="startQuiz('System Design')">
+          <div class="home-icon">🏗️</div>
+          <h3>System Design</h3>
+          <p>Scalability, database, API, microservices</p>
+          <span class="tag-count" id="countSystem">0 soal</span>
+        </div>
+        <div class="home-card" onclick="startQuiz('Behavioral')">
+          <div class="home-icon">🗣️</div>
+          <h3>Behavioral</h3>
+          <p>HR interview, STAR method, soft skills</p>
+          <span class="tag-count" id="countBehavioral">0 soal</span>
+        </div>
+        <div class="home-card home-card-all" onclick="startQuiz('all')">
+          <div class="home-icon">🎯</div>
+          <h3>Semua Soal</h3>
+          <p>Campuran dari semua kategori</p>
+          <span class="tag-count" id="countAll">0 soal</span>
+        </div>
+      </div>
+
+      <div class="history-section">
+        <h2>Riwayat Quiz</h2>
+        <div id="historyList" class="history-list">
+          <p class="empty-history">Belum ada riwayat.</p>
+        </div>
+        <button id="clearHistory" class="btn-clear" onclick="clearHistory()">Hapus Riwayat</button>
+      </div>
+    </section>
+
+    <!-- QUIZ SCREEN -->
+    <section id="quizScreen" class="hidden">
+      <div class="quiz-header">
+        <div class="quiz-info">
+          <span id="quizCategory" class="tag">Coding</span>
+          <span id="quizProgress">Soal 1/10</span>
+        </div>
+        <div class="quiz-timer" id="quizTimer">02:00</div>
+      </div>
+
+      <div class="quiz-body">
+        <div class="question-card">
+          <p id="questionText" class="question-text"></p>
+          <div id="optionsList" class="options-list"></div>
+        </div>
+      </div>
+
+      <div class="quiz-footer">
+        <button id="prevBtn" class="btn-nav" onclick="prevQuestion()" disabled>← Sebelumnya</button>
+        <button id="nextBtn" class="btn-nav btn-primary" onclick="nextQuestion()">Selanjutnya →</button>
+        <button id="finishBtn" class="btn-nav btn-finish hidden" onclick="finishQuiz()">Selesai ✓</button>
+      </div>
+    </section>
+
+    <!-- RESULT SCREEN -->
+    <section id="resultScreen" class="hidden">
+      <div class="result-header">
+        <div class="result-score">
+          <span class="score-number" id="scoreNumber">0</span>
+          <span class="score-label">dari <span id="totalQuestions">0</span> soal</span>
+        </div>
+        <div class="result-percent" id="resultPercent">0%</div>
+        <div class="result-message" id="resultMessage"></div>
+      </div>
+
+      <div class="result-details">
+        <h2>Pembahasan</h2>
+        <div id="reviewList" class="review-list"></div>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn-nav btn-primary" onclick="goHome()">Kembali ke Menu</button>
+        <button class="btn-nav" onclick="retryQuiz()">Coba Lagi</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data dari <a href="https://github.com/jwasham/coding-interview-university" target="_blank">coding-interview-university</a> &amp; <a href="https://github.com/donnemartin/system-design-primer" target="_blank">system-design-primer</a></p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

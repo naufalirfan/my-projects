@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Path Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Learning Path Generator</h1>
+    <p>Pilih jalur karir → dapat roadmap belajar gratis dari nol</p>
+    <button id="darkToggle" title="Ganti tema">🌙</button>
+  </header>
+
+  <main>
+    <!-- HOME SCREEN -->
+    <section id="homeScreen">
+      <div class="role-grid" id="roleGrid"></div>
+
+      <div class="progress-summary" id="progressSummary">
+        <h2>Progress Kamu</h2>
+        <div id="progressCards" class="progress-cards"></div>
+      </div>
+    </section>
+
+    <!-- ROADMAP SCREEN -->
+    <section id="roadmapScreen" class="hidden">
+      <div class="roadmap-header">
+        <button class="btn-back" onclick="goHome()">← Kembali</button>
+        <div class="roadmap-title">
+          <span id="roadmapIcon" class="roadmap-icon"></span>
+          <div>
+            <h2 id="roadmapName"></h2>
+            <p id="roadmapDesc" class="roadmap-desc"></p>
+          </div>
+        </div>
+        <div class="roadmap-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <span id="progressText" class="progress-text">0/0 selesai</span>
+        </div>
+      </div>
+
+      <div class="steps-list" id="stepsList"></div>
+    </section>
+
+    <!-- STEP DETAIL SCREEN -->
+    <section id="stepScreen" class="hidden">
+      <div class="step-header">
+        <button class="btn-back" onclick="goBackToRoadmap()">← Kembali ke Roadmap</button>
+        <div class="step-title-row">
+          <span id="stepCheck" class="step-check" onclick="toggleStepComplete()"></span>
+          <div>
+            <h2 id="stepTitle"></h2>
+            <div class="step-meta">
+              <span class="tag" id="stepDifficulty"></span>
+              <span class="tag tag-duration" id="stepDuration"></span>
+            </div>
+          </div>
+        </div>
+        <p id="stepDescription" class="step-description"></p>
+      </div>
+
+      <div class="step-section">
+        <h3>📚 Resource Gratis</h3>
+        <div id="resourceList" class="resource-list"></div>
+      </div>
+
+      <div class="step-section">
+        <h3>📋 Cheat Sheet</h3>
+        <div id="cheatsheetBox" class="cheatsheet-box"></div>
+      </div>
+
+      <div class="step-nav">
+        <button class="btn-nav" id="prevStepBtn" onclick="prevStep()" disabled>← Sebelumnya</button>
+        <button class="btn-nav btn-primary" id="nextStepBtn" onclick="nextStep()">Selanjutnya →</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data dari <a href="https://github.com/kamranahmedse/developer-roadmap" target="_blank">developer-roadmap</a>, <a href="https://github.com/EbookFoundation/free-programming-books" target="_blank">free-programming-books</a>, <a href="https://github.com/LeCoupa/awesome-cheatsheets" target="_blank">awesome-cheatsheets</a></p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

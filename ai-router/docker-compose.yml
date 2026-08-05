@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  ai-router:
+    build: .
+    container_name: ai-router
+    ports:
+      - "20128:20128"
+    volumes:
+      - ./config.yaml:/app/config.yaml
+      - ~/.ai-router:/root/.ai-router
+    restart: unless-stopped

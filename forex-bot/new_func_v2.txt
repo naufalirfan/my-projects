@@ -1,0 +1,48 @@
+async function generateMultiTFCandles(pair) {
+  const yahooFinance = new (require('yahoo-finance2').default)();
+  const yahooSymbols = {
+    'EUR/USD': 'EURUSD=X',
+    'GBP/USD': 'GBPUSD=X',
+    'USD/JPY': 'JPY=X',
+    'USD/CHF': 'CHF=X',
+    'AUD/USD': 'AUDUSD=X',
+    'USD/CAD': 'CAD=X',
+    'NZD/USD': 'NZDUSD=X',
+    'XAU/USD': 'GC=F'
+  };
+
+  const symbol = yahooSymbols[pair] || pair.replace('/', '') + '=X';
+  const tfCandles = {};
+  const intervals = { 'M5': '5m', 'M15': '15m', 'H1': '1h', 'H4': '1h', 'D1': '1d' };
+
+  async function fetchWithRetry(symbol, interval, options, retries = 2) {
+    for (let i = 0; i < retries; i++) {
+      try {
+        return await yahooFinance.chart(symbol, { interval, ...options });
+      } catch (e) {
+        console.warn('Retry ' + (i + 1) + ' for ' + symbol + ' (' + interval + '): ' + e.message);
+        if (i === retries - 1) throw e;
+        await new Promise(res => setTimeout(res, 2000 * (i + 1)));
+      }
+    }
+  }
+
+  for (const [tf, interval] of Object.entries(intervals)) {
+    try {
+      const queryOptions = { period1: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) }; // Reduced to 7 days to speed up
+      const result = await fetchWithRetry(symbol, interval, queryOptions);
+      tfCandles[tf] = result.quotes.map(q => ({
+        time: q.date.getTime(),
+        open: q.open,
+        high: q.high,
+        low: q.low,
+        close: q.close,
+        volume: q.volume || 0
+      }));
+    } catch (e) {
+      console.error('Final Error fetching ' + tf + ' for ' + pair + ':', e.message);
+      tfCandles[tf] = [];
+    }
+  }
+  return tfCandles;
+}

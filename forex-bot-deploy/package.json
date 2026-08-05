@@ -1,0 +1,45 @@
+{
+  "name": "forex-analysis-bot",
+  "version": "3.0.0",
+  "description": "Forex AI-Powered 3-in-1 Analysis Bot - Technical + AI News Sentiment + Geopolitical",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "bbema": "node -e \"require('./index').analyzeForexBBEMA(false, 500).then(() => process.exit(0))\"",
+    "sentiment": "node -e \"require('./news-sentiment').analyzeAllPairsSentiment(['EUR/USD','GBP/USD','USD/JPY','USD/CHF','AUD/USD','USD/CAD','NZD/USD','XAU/USD']).then(() => process.exit(0))\"",
+    "combined": "node -e \"require('./index').analyzeForexCombined(false).then(() => process.exit(0))\"",
+    "telegram": "node -e \"require('./index').analyzeForex(true)\"",
+    "telegram-combined": "node -e \"require('./index').analyzeForexCombined(true)\"",
+    "schedule": "node scheduler.js",
+    "backup": "bash backup.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "forex",
+    "analysis",
+    "trading",
+    "technical-analysis",
+    "fundamental",
+    "ai-sentiment",
+    "geopolitical",
+    "gemini-ai",
+    "telegram-bot"
+  ],
+  "author": "Forex Bot",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@google/genai": "^2.13.0",
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.18.1",
+    "chalk": "^4.1.2",
+    "cheerio": "^1.2.0",
+    "dotenv": "^16.4.0",
+    "groq-sdk": "^1.4.0",
+    "node-cron": "^4.6.0",
+    "node-fetch": "^2.7.0",
+    "node-telegram-bot-api": "^1.2.0",
+    "technicalindicators": "^3.1.0",
+    "yahoo-finance2": "^4.0.0"
+  }
+}

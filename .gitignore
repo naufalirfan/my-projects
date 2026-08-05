@@ -1,0 +1,123 @@
+# ============================================
+# SENSITIVE FILES - JANGAN DI UPLOAD
+# ============================================
+
+# Environment variables
+.env
+.env.*
+!.env.example
+!.env.local.example
+
+# API Keys & Certificates
+*.key
+*.pem
+*.p12
+*.pfx
+*.cer
+*.crt
+
+# Credentials
+credentials.json
+service-account*.json
+*credentials*
+*secret*
+*token*
+
+# ============================================
+# NODE.JS
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnp.*
+.yarn/
+
+# ============================================
+# PYTHON
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ============================================
+# BUILD & DIST
+# ============================================
+dist/
+build/
+out/
+*.egg-info/
+*.egg
+
+# ============================================
+# IDE & EDITOR
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================
+# OS
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# ============================================
+# PROJECT SPECIFIC
+# ============================================
+
+# Wrangler (Cloudflare)
+.wrangler/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Forex Bot
+forex-bot/node_modules/
+forex-bot-deploy/node_modules/
+
+# Shopee Bot
+shopee-flashsale-bot/__pycache__/
+shopee-flashsale-bot/src/__pycache__/
+
+# AI Router
+ai-router/__pycache__/
+ai-router/ai_router/__pycache__/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Zip files (source code)
+*.zip

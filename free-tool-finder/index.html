@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Tool Finder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Free Tool Finder</h1>
+    <p>Cari alternatif gratis untuk tool berbayar &mdash; <strong id="totalTools">36</strong> tool tersedia</p>
+    <input type="text" id="searchInput" placeholder="Cari nama tool atau yang mau diganti...">
+
+    <div id="filters">
+      <label>
+        <input type="checkbox" id="easyOnly">
+        Level Mudah saja
+      </label>
+      <select id="categoryFilter">
+        <option value="">Semua Kategori</option>
+        <option value="AI">AI</option>
+        <option value="Analytics">Analytics</option>
+        <option value="API">API</option>
+        <option value="Automation">Automation</option>
+        <option value="Developer">Developer</option>
+        <option value="Design">Design</option>
+        <option value="DevOps">DevOps</option>
+        <option value="Keamanan">Keamanan</option>
+        <option value="Komunikasi">Komunikasi</option>
+        <option value="Media">Media</option>
+        <option value="Produktivitas">Produktivitas</option>
+      </select>
+      <select id="sortFilter">
+        <option value="">Urutkan</option>
+        <option value="name-asc">Nama A-Z</option>
+        <option value="name-desc">Nama Z-A</option>
+        <option value="category">Kategori</option>
+        <option value="level">Level</option>
+      </select>
+      <select id="priceFilter">
+        <option value="">Semua Harga</option>
+        <option value="gratis">Gratis Total</option>
+        <option value="self-hosted">Self-hosted</option>
+        <option value="local">Local (Offline)</option>
+      </select>
+      <label class="fav-toggle">
+        <input type="checkbox" id="favOnly">
+        ⭐ Favorit saja
+      </label>
+      <button id="darkToggle" title="Ganti tema">🌙</button>
+    </div>
+  </header>
+
+  <section id="statsSection">
+    <div class="stats-grid">
+      <div class="stat-card" id="statTotal">
+        <span class="stat-number">0</span>
+        <span class="stat-label">Total Tool</span>
+      </div>
+      <div class="stat-card" id="statGratis">
+        <span class="stat-number">0</span>
+        <span class="stat-label">Gratis Total</span>
+      </div>
+      <div class="stat-card" id="statSelfhosted">
+        <span class="stat-number">0</span>
+        <span class="stat-label">Self-hosted</span>
+      </div>
+      <div class="stat-card" id="statLocal">
+        <span class="stat-number">0</span>
+        <span class="stat-label">Local/Offline</span>
+      </div>
+    </div>
+    <div class="stats-bar">
+      <div class="bar-fill bar-gratis" id="barGratis"></div>
+      <div class="bar-fill bar-selfhosted" id="barSelfhosted"></div>
+      <div class="bar-fill bar-local" id="barLocal"></div>
+    </div>
+    <div class="stats-legend">
+      <span class="legend-item"><span class="dot dot-gratis"></span> Gratis Total</span>
+      <span class="legend-item"><span class="dot dot-selfhosted"></span> Self-hosted</span>
+      <span class="legend-item"><span class="dot dot-local"></span> Local/Offline</span>
+    </div>
+  </section>
+
+  <main>
+    <div id="compareBar" class="compare-bar hidden">
+      <span id="compareCount">0</span> tool dipilih
+      <button id="compareBtn">Bandingkan</button>
+      <button id="compareClear">Batal</button>
+    </div>
+    <p id="resultCount"></p>
+    <div id="toolList"></div>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="compareModal" class="modal hidden">
+    <div class="modal-content modal-compare">
+      <button class="modal-close" id="compareModalClose">&times;</button>
+      <h2>Perbandingan Tool</h2>
+      <div id="compareBody"></div>
+    </div>
+  </div>
+
+  <div id="importModal" class="modal hidden">
+    <div class="modal-content modal-import">
+      <button class="modal-close" id="importModalClose">&times;</button>
+      <h2>Tambah Tool Baru</h2>
+      <form id="importForm">
+        <div class="form-group">
+          <label>Nama Tool</label>
+          <input type="text" id="impTool" required placeholder="Contoh: MyTool">
+        </div>
+        <div class="form-group">
+          <label>Gantikan Tool</label>
+          <input type="text" id="impReplaces" required placeholder="Contoh: Figma">
+        </div>
+        <div class="form-group">
+          <label>Kategori</label>
+          <select id="impCategory" required>
+            <option value="">Pilih kategori</option>
+            <option value="AI">AI</option>
+            <option value="Analytics">Analytics</option>
+            <option value="API">API</option>
+            <option value="Automation">Automation</option>
+            <option value="Developer">Developer</option>
+            <option value="Design">Design</option>
+            <option value="DevOps">DevOps</option>
+            <option value="Keamanan">Keamanan</option>
+            <option value="Komunikasi">Komunikasi</option>
+            <option value="Media">Media</option>
+            <option value="Produktivitas">Produktivitas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Harga</label>
+          <input type="text" id="impPrice" required placeholder="Contoh: Gratis">
+        </div>
+        <div class="form-group">
+          <label>Link GitHub/Web</label>
+          <input type="text" id="impLink" required placeholder="https://...">
+        </div>
+        <div class="form-group">
+          <label>Deskripsi</label>
+          <input type="text" id="impDesc" required placeholder="Singkat, 1 kalimat">
+        </div>
+        <div class="form-group">
+          <label>Level</label>
+          <select id="impLevel" required>
+            <option value="Mudah">Mudah</option>
+            <option value="Menengah">Menengah</option>
+            <option value="Sulit">Sulit</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tipe Harga</label>
+          <select id="impPriceType" required>
+            <option value="gratis">Gratis Total</option>
+            <option value="self-hosted">Self-hosted</option>
+            <option value="local">Local/Offline</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit">Simpan Tool</button>
+      </form>
+    </div>
+  </div>
+
+  <button id="backToTop" title="Kembali ke atas">↑</button>
+  <button id="importBtn" title="Tambah tool baru" class="import-fab">+</button>
+
+  <footer>
+    <p>Data dari <a href="https://github.com/ripienaar/free-for-dev" target="_blank">free-for-dev</a>, <a href="https://github.com/public-apis/public-apis" target="_blank">public-apis</a>, <a href="https://github.com/awesome-selfhosted/awesome-selfhosted" target="_blank">awesome-selfhosted</a></p>
+    <p>Dibuat untuk belajar &mdash; Data bisa ditambah sendiri lewat tombol <strong>+</strong></p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
